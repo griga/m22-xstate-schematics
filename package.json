@@ -1,9 +1,10 @@
 {
-  "name": "machines",
-  "version": "0.0.0",
-  "description": "A blank schematics",
+  "name": "@m22/machines",
+  "version": "0.0.1",
+  "description": "XState machine schematics for Angular CLI ",
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
     "test": "npm run build && jasmine src/**/*_spec.js"
   },
   "keywords": [
@@ -15,6 +16,7 @@
   "dependencies": {
     "@angular-devkit/core": "^9.1.7",
     "@angular-devkit/schematics": "^9.1.7",
+    "@schematics/angular": "^9.1.7",
     "typescript": "~3.8.2"
   },
   "devDependencies": {

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "machine-options",
+  "title": "XState Machine Schematic",
+  "type": "object",
+  "description": "Creates XState machine with some defaults and support stuff",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Machine name",
+      "x-prompt": "What is name of machine?",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "addOpClass": {
+      "type": "boolean",
+      "description": "Add an operations class for the machine?",
+      "default": false
+    },
+    "project": {
+      "type": "string",
+      "description": "Project name to generate machine with"
+    }
+  },
+  "required": ["name"]
+}
