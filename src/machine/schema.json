@@ -22,7 +22,17 @@
     "project": {
       "type": "string",
       "description": "Project name to generate machine with"
+    },
+    "states": {
+      "type": "string",
+      "description": "Comma separated states"
+    },
+    "context": {
+      "type": "string",
+      "description": "Comma separated machine context items",
+      "default": ""
     }
+
   },
   "required": ["name"]
 }

@@ -1,50 +1,35 @@
 import { Machine, assign } from 'xstate';
 
-export interface  <%= classify(name) %>Context {
-   
+export interface  <%= classify(name) %>Context {<% for (let item of contextItems) { %>
+  <%= item %>: any;<% } %>
 }
-export const <%= camelize(name) %>InitialContext:  <%= classify(name) %>Context = {
-   
+export const <%= camelize(name) %>InitialContext:  <%= classify(name) %>Context = {<% for (let item of contextItems) { %>
+  <%= item %>: null,<% } %>
 };
 
 export interface <%= classify(name) %>Shema {
-  states: {
-    boot: {};
-    init: {};
-    active: {};
-    finish: {};
+  states: {<% for (let state of stateNodes) { %>
+    <%= state %>: {};<% } %>
   };
 }
 
 // prettier-ignore
-export type <%= classify(name) %>Event =
-  | { type: 'INIT' }
-  | { type: 'ACTIVATE' }
-  | { type: 'FINISH' }
+export type <%= classify(name) %>Event = <% for (let event of stateEvents) { %>
+    | { type: '<%= event %>' }<% } %>
 
 export const <%= camelize(name) %>GameMachine = Machine< <%= classify(name) %>Context,  <%= classify(name) %>Shema,  <%= classify(name) %>Event>(
   {
     id: '<%= dasherize(name) %>',
-    initial: 'boot',
+    initial: '<%= initialState %>',
     context: { ...<%= camelize(name) %>InitialContext },
-    states: {
-      boot: {
+    states: {<% for ( let state of stateTransitions ) { %><% if ( !isLast( state, stateTransitions ) ) { %>
+      <%= state.state %>: {
         on: {
-          INIT: 'init',
+          <%= state.event %>: '<%= state.target %>',
         },
-      },
-      init: {
-        on: {
-          ACTIVATE: 'active',
-        },
-      },
-      active: {
-        on: {
-          FINISH: 'finish',
-        },
-      },
-      finish: { type: 'final' },
-    },
+      },<% } else { %>
+      <%= state.state %>: { type: 'final' },
+    <% } %><% } %>},
   },
   {
     actions: {},
