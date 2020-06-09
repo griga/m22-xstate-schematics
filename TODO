@@ -1,0 +1,22 @@
+
+
+
+✔ flat schematic option @done(20-06-09 17:09)
+
+☐ publish to npm
+  ☐ flow
+
+
+☐ readme
+  ☐ about
+  ☐ options
+  ☐ usage
+    ☐ terminal
+    ☐ NX Console
+
+
+
+
+
+// terminal usage
+☐ schematics .:machine --debug=false --force tmp/MainGame --states=boot,init,active,finish --context=active,items --flat

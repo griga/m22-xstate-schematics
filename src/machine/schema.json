@@ -19,6 +19,11 @@
       "description": "Add an operations class for the machine?",
       "default": false
     },
+    "flat": {
+      "type": "boolean",
+      "description": "Don't create directory for machine",
+      "default": false
+    },
     "project": {
       "type": "string",
       "description": "Project name to generate machine with"

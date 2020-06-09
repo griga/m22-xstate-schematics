@@ -45,6 +45,11 @@ export function machine(_options: Schema): Rule {
     }
     const { name, path } = parseName(targetRootPath, _options.name);
 
+    const movePath = _options.flat ? path : `${path}/${strings.dasherize(name)}`
+
+    console.log('mo', movePath);
+    
+
     const sourceTemplates = url("./files");
 
     const sourceParametrizedTemplates = apply(sourceTemplates, [
@@ -59,7 +64,7 @@ export function machine(_options: Schema): Rule {
         stateEvents,
         stateTransitions,
       }),
-      move(path),
+      move(movePath),
     ]);
     return mergeWith(sourceParametrizedTemplates)(tree, _context);
   };
