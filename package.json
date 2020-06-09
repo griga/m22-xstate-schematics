@@ -1,5 +1,5 @@
 {
-  "name": "@m22/machines",
+  "name": "@m22/xstate-schematics",
   "version": "0.0.1",
   "description": "XState machine schematics for Angular CLI ",
   "scripts": {
