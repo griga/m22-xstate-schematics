@@ -17,7 +17,7 @@ export interface <%= classify(name) %>Shema {
 export type <%= classify(name) %>Event = <% for (let state of stateNodes) { %>
     | { type: '<%= toUpperCase(state) %>' }<% } %>
 
-export const <%= camelize(name) %>MachineKey = `<%= dasherize(name) %>`;
+export const <%= camelize(name) %>MachineKey = `<%= dasherize(name) %>-machine`;
 
 export const <%= camelize(name) %>Machine = Machine<<%= classify(name) %>Context, <%= classify(name) %>Shema, <%= classify(name) %>Event>(
   {
