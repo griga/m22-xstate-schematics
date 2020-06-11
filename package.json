@@ -1,5 +1,5 @@
 {
-  "name": "@m22/xstate-schematics",
+  "name": "@m22spirit/xstate-schematics",
   "version": "0.0.1",
   "description": "XState machine schematics for Angular CLI ",
   "scripts": {
@@ -10,8 +10,9 @@
   "keywords": [
     "schematics"
   ],
-  "author": "",
+  "author": "griga",
   "license": "MIT",
+  "main": "./src/index.js",
   "schematics": "./src/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^9.1.7",
@@ -19,9 +20,5 @@
     "@schematics/angular": "^9.1.7",
     "typescript": "~3.8.2"
   },
-  "devDependencies": {
-    "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
-    "jasmine": "^3.5.0"
-  }
+  "devDependencies": {}
 }

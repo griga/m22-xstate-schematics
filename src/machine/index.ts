@@ -10,7 +10,7 @@ import { WorkspaceSchema } from "@schematics/angular/utility/workspace-models";
 
 export function machine(_options: Schema): Rule {
   // console.log('ooo', _options);
-  
+
   const states = _options.states ?? "boot,active,finish";
   const stateNodes = states.split(",");
   const initialState = stateNodes[0];
@@ -28,7 +28,7 @@ export function machine(_options: Schema): Rule {
     }
   });
 
-  const contextItems = _options.context.split(',');
+  const contextItems = _options.context.split(",").filter((_) => _.trim());
 
   return (tree: Tree, _context: SchematicContext) => {
     const workspaceConfigBuffer = tree.read("angular.json");
@@ -45,10 +45,11 @@ export function machine(_options: Schema): Rule {
     }
     const { name, path } = parseName(targetRootPath, _options.name);
 
-    const movePath = _options.flat ? path : `${path}/${strings.dasherize(name)}`
+    const movePath = _options.flat
+      ? path
+      : `${path}/${strings.dasherize(name)}`;
 
-    console.log('mo', movePath);
-    
+    console.log("mo", movePath);
 
     const sourceTemplates = url("./files");
 

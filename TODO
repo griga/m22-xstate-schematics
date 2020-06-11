@@ -2,10 +2,17 @@
 
 
 ✔ flat schematic option @done(20-06-09 17:09)
+  ☐ `flat` default
+✔ fix empty `context` option @done(20-06-11 20:57)
+☐ create angular service (`interpreter`) extends interpreter
+✔ export `id` key constant @done(20-06-11 20:57)
 
 ☐ publish to npm
-  ☐ organization/package
+  ✔ initial @done(20-06-09 17:50)
+  ✔ organization/package @done(20-06-09 17:50)
   ☐ updates flow
+  ☐ move to @m22/xstate-schematics
+
 
 
 ☐ readme
