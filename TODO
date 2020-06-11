@@ -6,6 +6,7 @@
 ✔ fix empty `context` option @done(20-06-11 20:57)
 ☐ create angular service (`interpreter`) extends interpreter
 ✔ export `id` key constant @done(20-06-11 20:57)
+☐ simplify template `state transitions`
 
 ☐ publish to npm
   ✔ initial @done(20-06-09 17:50)

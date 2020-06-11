@@ -14,25 +14,22 @@ export interface <%= classify(name) %>Shema {
 }
 
 // prettier-ignore
-export type <%= classify(name) %>Event = <% for (let event of stateEvents) { %>
-    | { type: '<%= event %>' }<% } %>
-
+export type <%= classify(name) %>Event = <% for (let state of stateNodes) { %>
+    | { type: '<%= toUpperCase(state) %>' }<% } %>
 
 export const <%= camelize(name) %>MachineKey = `<%= dasherize(name) %>`;
 
-export const <%= camelize(name) %>Machine = Machine< <%= classify(name) %>Context,  <%= classify(name) %>Shema,  <%= classify(name) %>Event>(
+export const <%= camelize(name) %>Machine = Machine<<%= classify(name) %>Context, <%= classify(name) %>Shema, <%= classify(name) %>Event>(
   {
     id: '<%= dasherize(name) %>',
     initial: '<%= initialState %>',
     context: { ...<%= camelize(name) %>InitialContext },
-    states: {<% for ( let state of stateTransitions ) { %><% if ( !isLast( state, stateTransitions ) ) { %>
-      <%= state.state %>: {
-        on: {
-          <%= state.event %>: '<%= state.target %>',
-        },
-      },<% } else { %>
-      <%= state.state %>: { type: 'final' },
-    <% } %><% } %>},
+    states: {<% for ( let state of stateNodes ) { %> 
+      <%= state %>: {},<% } %>
+    },
+    on: {<% for ( let state of stateNodes ) { %> 
+      <%= toUpperCase(state) %>: '.<%= state %>',<% } %>
+    },
   },
   {
     actions: {},

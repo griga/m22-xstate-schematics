@@ -14,19 +14,19 @@ export function machine(_options: Schema): Rule {
   const states = _options.states ?? "boot,active,finish";
   const stateNodes = states.split(",");
   const initialState = stateNodes[0];
-  const stateEvents = stateNodes.slice(1).map((_: string) => _.toUpperCase());
-  const stateTransitions = stateNodes.map((node) => {
-    if (isLast(node, stateNodes)) {
-      return { state: node };
-    } else {
-      const nextState = stateNodes[stateNodes.indexOf(node) + 1];
-      return {
-        state: node,
-        event: nextState.toUpperCase(),
-        target: nextState.toLowerCase(),
-      };
-    }
-  });
+  // const stateEvents = stateNodes.slice(1).map((_: string) => _.toUpperCase());
+  // const stateTransitions = stateNodes.map((node) => {
+  //   if (isLast(node, stateNodes)) {
+  //     return { state: node };
+  //   } else {
+  //     const nextState = stateNodes[stateNodes.indexOf(node) + 1];
+  //     return {
+  //       state: node,
+  //       event: nextState.toUpperCase(),
+  //       target: nextState.toLowerCase(),
+  //     };
+  //   }
+  // });
 
   const contextItems = _options.context.split(",").filter((_) => _.trim());
 
@@ -49,21 +49,21 @@ export function machine(_options: Schema): Rule {
       ? path
       : `${path}/${strings.dasherize(name)}`;
 
-    console.log("mo", movePath);
-
     const sourceTemplates = url("./files");
 
     const sourceParametrizedTemplates = apply(sourceTemplates, [
       template({
         ...strings,
         isLast,
+        toUpperCase,
+        toLowerCase,
         ..._options,
         name,
         contextItems,
         stateNodes,
         initialState,
-        stateEvents,
-        stateTransitions,
+        // stateEvents,
+        // stateTransitions,
       }),
       move(movePath),
     ]);
@@ -72,7 +72,14 @@ export function machine(_options: Schema): Rule {
 }
 
 // helpers
-
 function isLast(item: any, items: any[]): boolean {
   return items.indexOf(item) === items.length - 1;
+}
+
+function toUpperCase(str: string){
+  return str.toUpperCase()
+}
+
+function toLowerCase(str: string){
+  return str.toLowerCase()
 }
