@@ -7,6 +7,8 @@
 ☐ create angular service (`interpreter`) extends interpreter
 ✔ export `id` key constant @done(20-06-11 20:57)
 ☐ simplify template `state transitions`
+☐ `Machine` prefix config
+✔ machine `id` from key constant @done(20-06-12 05:18)
 
 ☐ publish to npm
   ✔ initial @done(20-06-09 17:50)

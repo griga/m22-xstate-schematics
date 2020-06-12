@@ -21,7 +21,7 @@ export const <%= camelize(name) %>MachineKey = `<%= dasherize(name) %>-machine`;
 
 export const <%= camelize(name) %>Machine = Machine<<%= classify(name) %>Context, <%= classify(name) %>Shema, <%= classify(name) %>Event>(
   {
-    id: '<%= dasherize(name) %>',
+    id: <%= camelize(name) %>MachineKey,
     initial: '<%= initialState %>',
     context: { ...<%= camelize(name) %>InitialContext },
     states: {<% for ( let state of stateNodes ) { %> 
