@@ -10,12 +10,13 @@
 ☐ `Machine` prefix config
 ✔ machine `id` from key constant @done(20-06-12 05:18)
 
+
+
 ☐ publish to npm
   ✔ initial @done(20-06-09 17:50)
   ✔ organization/package @done(20-06-09 17:50)
   ☐ updates flow
   ☐ move to @m22/xstate-schematics
-
 
 
 ☐ readme
