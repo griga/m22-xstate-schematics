@@ -9,7 +9,9 @@
 ☐ simplify template `state transitions`
 ☐ `Machine` prefix config
 ✔ machine `id` from key constant @done(20-06-12 05:18)
-
+✔ factory with ctx @done(20-06-18 06:46)
+☐ optional context interface
+☐ optional schema interface
 
 
 ☐ publish to npm

@@ -36,3 +36,9 @@ export const <%= camelize(name) %>Machine = Machine<<%= classify(name) %>Context
     guards: {},
   },
 );
+
+export const <%= camelize(name) %>MachineFactory = (ctx: Partial<<%= classify(name) %>Context>) => {
+  return <%= camelize(name) %>Machine.withContext({
+    ...ctx,
+  } as <%= classify(name) %>Context);
+};
