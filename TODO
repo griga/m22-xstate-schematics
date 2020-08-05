@@ -10,8 +10,10 @@
 ☐ `Machine` prefix config
 ✔ machine `id` from key constant @done(20-06-12 05:18)
 ✔ factory with ctx @done(20-06-18 06:46)
+☐ context factory option
 ☐ optional context interface
 ☐ optional schema interface
+✔ simplify machine factory function @done(20-08-05 19:59)
 
 
 ☐ publish to npm
