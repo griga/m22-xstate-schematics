@@ -20,7 +20,7 @@ remove that prettier line
   ✔ initial @done(20-06-09 17:50)
   ✔ organization/package @done(20-06-09 17:50)
   ☐ updates flow
-  ☐ move to @m22/xstate-schematics
+  ✔ move to @m22/xstate-schematics @done(20-08-31 14:20)
 
 
 ☐ readme
@@ -30,7 +30,7 @@ remove that prettier line
     ☐ terminal
     ☐ NX Console
     ☐ without ng/nx project
-
+  ☐ gifs
 
 
 

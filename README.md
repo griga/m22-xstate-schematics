@@ -1,4 +1,4 @@
-\# Getting Started With Schematics
+\# Code generation for xstate
 
 This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
 
