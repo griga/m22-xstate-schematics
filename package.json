@@ -1,6 +1,6 @@
 {
   "name": "@m22/xstate-schematics",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "XState machine schematics for Angular CLI ",
   "scripts": {
     "build": "tsc -p tsconfig.json",
