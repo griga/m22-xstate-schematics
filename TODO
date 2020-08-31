@@ -14,7 +14,7 @@
 ☐ optional context interface
 ☐ optional schema interface
 ✔ simplify machine factory function @done(20-08-05 19:59)
-
+remove that prettier line
 
 ☐ publish to npm
   ✔ initial @done(20-06-09 17:50)
@@ -29,6 +29,7 @@
   ☐ usage
     ☐ terminal
     ☐ NX Console
+    ☐ without ng/nx project
 
 
 
